@@ -12,6 +12,8 @@ inputBox.addEventListener("keydown", function(event) {
     } else {
       counter++;
     }
+  } else if (!hardModeEnabled) {
+    event.preventDefault(); // Prevent backspace or delete action in easy mode
   }
 });
 
