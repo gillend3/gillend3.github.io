@@ -1,11 +1,10 @@
 var counter = 0;
 var maxBackspaces = 10;
 var inputBox = document.getElementById("input-box");
+var hardModeEnabled = false;
 
-inputBox.addEventListener("keydown", handleHardMode);
-
-function handleHardMode(event) {
-  if (event.key === "Backspace" || event.key === "Delete") {
+inputBox.addEventListener("keydown", function(event) {
+  if (hardModeEnabled && (event.key === "Backspace" || event.key === "Delete")) {
     if (counter >= maxBackspaces) {
       event.preventDefault(); // Prevent backspace or delete action
       inputBox.innerHTML = ""; // Clear the input box
@@ -14,20 +13,12 @@ function handleHardMode(event) {
       counter++;
     }
   }
-}
+});
 
-function executeMode(checked, mode) {
+function executeMode(mode) {
   if (mode === 'easy') {
-    if (checked) {
-      inputBox.removeEventListener("keydown", handleHardMode);
-    } else {
-      inputBox.addEventListener("keydown", handleHardMode);
-    }
+    hardModeEnabled = false;
   } else if (mode === 'hard') {
-    if (checked) {
-      inputBox.addEventListener("keydown", handleHardMode);
-    } else {
-      inputBox.removeEventListener("keydown", handleHardMode);
-    }
+    hardModeEnabled = true;
   }
 }
