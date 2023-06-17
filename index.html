@@ -48,6 +48,10 @@
       font-size: 14px;
       color: gray;
     }
+
+    .button-container {
+      margin-top: 10px;
+    }
     
   </style>
 </head>
@@ -57,7 +61,9 @@
     <h2 class="subtitle">Sometimes, when we are writing, we get into our own heads. Was that really the right word to use? Did I <br>spell it right? Maybe I should check the thesaurus for a better one. All of this fiddling and fussing takes<br> you out of that flow state which is so important to writing – particularly the first draft, or what Adam calls<br> the “mud-slinging” phase. This app is designed to help you enter and maintain a deep flow state, that magical<br> place where the subconscious comes alive and produces wonders.<br></h2>
     <h2 class="subtitle"><u>Instructions:</u> It's a simple app: you just type in the box. The only catch is this - no deletions, no corrections.<br> Just keep moving forward. You can use the Copy button at the bottom if you want to copy & paste your work<br> into a word processor.</h2>
     <div class="input-box" type="text" contenteditable="true" id="input-box"></div>
-    <button onclick="copyText()">Copy</button>
+    <div class="button-container"
+      <button onclick="copyText()">Copy</button>
+    </div>
   </div>  
 <script src="prevent-delete-script.js"></script>
 <script src="copy-script.js"></script>
